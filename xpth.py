@@ -67,15 +67,20 @@ def test_8():
     EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div/div[2]/table/tbody/tr[1]/td[7]/a[2]')))
     elem1.click()
 
-    #Test looking at edit button at bottom of table
     
+    
+    #Test looking at edit button at bottom of table 
 def test_9():
-
-
+    elem1 = WebDriverWait(b, 5).until(
+    EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div/div[2]/table/tbody/tr[10]/td[7]/a[1]')))
+    elem1.click()
+    
+    #Test looking at delete button at bottom of table
 def test_10():
-
-
-#Test looking at delete button at top of table
+    elem1 = WebDriverWait(b, 5).until(
+    EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div/div[2]/table/tbody/tr[10]/td[7]/a[2]')))
+    elem1.click()
+    b.quit()
 
 
 

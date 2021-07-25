@@ -13,11 +13,14 @@ b.get(URL)
 Names = ["qux","foo","bar","baz"]
 Header = "Challenging DOM"
 Text= """The hardest part in automated web testing is finding the best locators (e.g., ones that well named, unique, and unlikely to change). It's more often than not that the application you're testing was not built with this concept in mind. This example demonstrates that with unique IDs, a table with no helpful locators, and a canvas element."""
+
+#Test page is loaded correctly.
 def test_1():
     elem1 = b.title
     assert "The Internet" == elem1
     print(elem1)
-  
+    
+  #Test blue button on page, repeated 5 times and text displayed checked against options. 
 @pytest.mark.repeat(5)
 def test_2():
     elem1 = b.find_element(By.XPATH, 'html/body/div[2]/div/div/div/div/div[1]/a[1]')
@@ -25,7 +28,9 @@ def test_2():
     elem1.click()
     assert a in Names
     print (a)
-
+    
+ 
+  #Test red button on page, repeated 5 times and text displayed checked against options. 
 @pytest.mark.repeat(5)
 def test_3():
     elem1 = b.find_element(By.XPATH, 'html/body/div[2]/div/div/div/div/div[1]/a[2]')
@@ -33,7 +38,9 @@ def test_3():
     elem1.click()
     assert a in Names
     print (a)
-
+    
+ 
+  #Test green button on page, repeated 5 times and text displayed checked against options. 
 @pytest.mark.repeat(5)
 def test_4():
     elem1 = b.find_element(By.XPATH, 'html/body/div[2]/div/div/div/div/div[1]/a[3]')
@@ -41,13 +48,17 @@ def test_4():
     elem1.click()
     assert a in Names
     print (a)
-
+    
+ 
+  #Test text on page. 
 def test_5():
     elem1 = b.find_element(By.XPATH, '/html/body/div[2]/div/div/h3')
     a=(elem1.text)
     assert a == Header
     print(a)
+    
 
+  #Test text on page. 
 def test_6():
     elem1 = b.find_element(By.XPATH, '/html/body/div[2]/div/div/p')
     a=(elem1.text)
